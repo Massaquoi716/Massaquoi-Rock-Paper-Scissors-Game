@@ -50,28 +50,38 @@ function getHumanChoice(){
 function playRound(humanChoice, computerChoice){
     if(humanChoice === "rock" && computerChoice === "scissors"){
         humanScore++;
-        console.log("you won!")
+        
     } else if(humanChoice === "rock" && computerChoice === "paper"){
         computerScore++;
-        console.log("you lost!")
+        
     } else if(humanChoice === "scissors" && computerChoice === "paper"){
         humanScore++;
-        console.log("you won");
+        
     } else if(humanChoice === "scissors" && computerChoice === "rock"){
         computerScore++;
-        console.log("you lost!");
+        
     } else if(humanChoice === "paper" && computerChoice === "scissors"){
         computerScore++;
-        console.log("you lost!");
+        
     } else if(humanChoice === "paper" && computerChoice === "rock"){
         humanScore++;
-        console.log("you won!");
-    } else{
-        console.log("it's a draw!");
-    }
+        
+    } 
 }
 
-let comResult = getComputerChoice();
-let humResult = getHumanChoice();
+function playGame(){
+    let roundCount = 0;
+    while(roundCount < 5){
 
-playRound(humResult, comResult);
+        roundCount++;
+        alert(`This is round: ${roundCount}`);
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
+        
+        playRound(humanChoice, computerChoice);
+
+    }
+
+}
+playGame();
+alert(`You won ${humanScore} game(s) and computer won ${computerScore} game(s) and you guys draw ${5 - (computerScore + humanScore)} game(s)`);
