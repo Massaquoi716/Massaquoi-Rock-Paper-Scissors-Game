@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice(){
     let computerChoice = Math.floor((Math.random() * 3)) + 1;
     if(computerChoice == 1){
@@ -14,9 +17,6 @@ function getHumanChoice(){
     humanChoice  = prompt("Between 'rock, paper, and scissors, select your choice: ");
     while(true){
         try {
-
-            
-            while(true){
                 
                 humanChoice = humanChoice.toLowerCase();
 
@@ -26,11 +26,19 @@ function getHumanChoice(){
                 humanChoice = prompt("wrong value! choose either 'rock, paper, or scissors: ");
             }
     
-            }
+            
             
         } catch (error) {
-            console.error("An error occurred:", error.message);
-            humanChoice = prompt("wrong value! choose either 'rock, paper, or scissors: ");
+            if (error instanceof TypeError) {
+                console.error("TypeError: Cannot call methods on null or undefined.");
+
+                alert("Thanks for playing rock, paper and scissors game, bye and exiting...");
+
+                break;
+            } else {
+                humanChoice = prompt("wrong value! choose either 'rock, paper, or scissors: ");
+            }
+            
         }
 
 
@@ -39,4 +47,31 @@ function getHumanChoice(){
 }
 
 
-getHumanChoice();
+function playRound(humanChoice, computerChoice){
+    if(humanChoice === "rock" && computerChoice === "scissors"){
+        humanScore++;
+        console.log("you won!")
+    } else if(humanChoice === "rock" && computerChoice === "paper"){
+        computerScore++;
+        console.log("you lost!")
+    } else if(humanChoice === "scissors" && computerChoice === "paper"){
+        humanScore++;
+        console.log("you won");
+    } else if(humanChoice === "scissors" && computerChoice === "rock"){
+        computerScore++;
+        console.log("you lost!");
+    } else if(humanChoice === "paper" && computerChoice === "scissors"){
+        computerScore++;
+        console.log("you lost!");
+    } else if(humanChoice === "paper" && computerChoice === "rock"){
+        humanScore++;
+        console.log("you won!");
+    } else{
+        console.log("it's a draw!");
+    }
+}
+
+let comResult = getComputerChoice();
+let humResult = getHumanChoice();
+
+playRound(humResult, comResult);
