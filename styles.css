@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a background color and center the content */
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Container styles for the game */
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 80%;
+    max-width: 400px;
+}
+
+/* Heading styles */
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Paragraph styles */
+.description {
+    color: #666;
+    margin: 0;           /* Remove default margin */
+    padding: 10px;       /* Add padding as needed */
+    font-size: 16px;     /* Adjust font size */
+    max-width: 100%;  
+}
+
+/* Button styles */
+.button-style {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    margin:10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    background-color: #0c5a10;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+#newGame {
+
+    background-color: #242369;
+    color: rgb(165, 150, 14);
+    border: none;
+    margin:10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#newGame:focus{
+    outline: none;
+}
+
+#newGame:hover{
+    background-color: #040257;
+    color: rgb(178, 178, 51);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
+
+
